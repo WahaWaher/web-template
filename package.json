@@ -1,7 +1,7 @@
 {
   "name": "web-template",
   "version": "1.0",
-  "description": "Web template 2023",
+  "description": "Web Template 2023",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev gulp dev",
     "build": "cross-env NODE_ENV=prod gulp build",

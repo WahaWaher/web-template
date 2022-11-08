@@ -1,0 +1,112 @@
+@import '../settings';
+
+/**
+ * Default style
+ */
+[data-micromodal] {
+  display: none;
+  &.is-open {
+    display: block;
+  }
+  .modal {
+    &__overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($backdrop-color, $backdrop-opacity);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    &__container {
+      width: 100%;
+      max-width: 360px;
+      max-height: 100vh;
+      padding: 35px;
+      background-color: $white;
+      overflow-y: auto;
+      position: relative;
+      z-index: 999;
+    }
+    &__close {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent;
+      border: 0;
+      background-color: #eee;
+      transition: all $trs;
+      &::before {
+        content: "\2715";
+      }
+      &:hover {
+        color: $white;
+        background-color: rgb(228, 76, 76);
+      }
+    }
+  }
+  /**
+   * Animation
+   */
+  &[aria-hidden="false"] {
+    .modal__overlay {
+      animation: mFadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+    .modal__container {
+      animation: mSlideIn .3s cubic-bezier(0, 0, .2, 1);
+    }
+  }
+  &[aria-hidden="true"] {
+    .modal__overlay {
+      animation: mFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+    .modal__container {
+      animation: mSlideOut .5s cubic-bezier(0, 0, .2, 1);
+    }
+  }
+}
+
+@keyframes mFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mSlideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mSlideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}

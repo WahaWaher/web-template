@@ -1,0 +1,151 @@
+/**
+ * Custom utilities
+ * src: node_modules/bootstrap/scss/_utilities.scss
+ */
+$utilities: map-merge($utilities, (
+  "display": (
+    responsive: true,
+    print: false,
+    property: display,
+    class: d,
+    values:
+    // inline
+    // inline-block
+    block // grid
+    // table
+    // table-row
+    // table-cell
+    flex inline-flex none
+  ),
+  "flex-direction": (
+    responsive: true,
+    property: flex-direction,
+    class: flex,
+    values: row column // row-reverse
+    // column-reverse
+  ),
+  "flex-wrap": (
+    responsive: true,
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap // wrap-reverse
+  ),
+  "justify-content": (
+    responsive: true,
+    property: justify-content,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      // between: space-between,
+      // around: space-around,
+      // evenly: space-evenly,
+    )
+  ),
+  "align-items": (
+    responsive: true,
+    property: align-items,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      // baseline: baseline,
+      // stretch: stretch,
+    )
+  ),
+  "align-self": (
+    responsive: true,
+    property: align-self,
+    values: (
+      // auto: auto,
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      // baseline: baseline,
+      // stretch: stretch,
+    )
+  ),
+  "order": (
+    responsive: true,
+    property: order,
+    values: (
+      first: -1,
+      // 0: 0,
+      // 1: 1,
+      // 2: 2,
+      // 3: 3,
+      // 4: 4,
+      // 5: 5,
+      last: 6,
+    ),
+  ),
+  "text-align": (
+    responsive: false,
+    property: text-align,
+    class: text,
+    values: (
+      start: left,
+      end: right,
+      center: center,
+    )
+  ),
+));
+
+$utilities: map-get-multiple($utilities, (
+  "display",
+  // "order",
+  // "flex",
+  "flex-direction",
+  // "flex-grow",
+  // "flex-shrink",
+  // "flex-wrap",
+  "justify-content",
+  "align-items",
+  // "align-content",
+  // "align-self",
+  "margin",
+  "margin-x",
+  "margin-y",
+  "margin-top",
+  "margin-end",
+  "margin-bottom",
+  "margin-start",
+  "negative-margin",
+  "negative-margin-x",
+  "negative-margin-y",
+  "negative-margin-top",
+  "negative-margin-end",
+  "negative-margin-bottom",
+  "negative-margin-start",
+  "padding",
+  "padding-x",
+  "padding-y",
+  "padding-top",
+  "padding-end",
+  "padding-bottom",
+  "padding-start",
+  // "font-size",
+  // "font-style",
+  // "font-weight",
+  // "line-height",
+  "text-align",
+  // "text-decoration",
+  // "text-transform",
+  // "white-space",
+  // "word-wrap",
+  // "color",
+  // "background-color",
+  // "user-select",
+  // "pointer-events",
+  // "align",
+  // "overflow",
+  // "position",
+  // "width,
+  // "max-width",
+  // "viewport-width",
+  // "min-viewport-width",
+  // "height",
+  // "max-height",
+  // "viewport-height",
+  // "min-viewport-height",
+));

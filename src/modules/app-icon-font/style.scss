@@ -1,0 +1,43 @@
+@import 'variables';
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?6phlw7') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?6phlw7') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="aif-"], [class*=" aif-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.aif-film {
+  &:before {
+    content: $aif-film; 
+  }
+}
+.aif-mouse {
+  &:before {
+    content: $aif-mouse; 
+  }
+}
+.aif-cloudy {
+  &:before {
+    content: $aif-cloudy; 
+  }
+}
+

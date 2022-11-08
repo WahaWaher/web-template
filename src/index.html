@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+  <title>Web Template 2023</title>
+
+  <meta name="description" content="description">
+  <meta name="keywords" content="key, words">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+  <!-- <link rel="preload" as="font" href="" crossorigin> -->
+
+  <!-- build:css -->
+  <link rel="stylesheet" href="css/vendors.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div class="app d-block">
+    <!-- AppHeader : Start -->
+    <header class="app-header">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex align-items-center text-align-end">
+            <h4 class="lh-1 m-0">Web Template 2023</h4>
+          </div>
+          <div class="col-auto d-lg-none">
+
+            <button class="hamburger hamburger--slider" data-drawer-toggle="app-drawer" aria-label="Меню">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- AppHeader : End -->
+
+    <!-- AppPage : Start -->
+    <main class="app-page">
+
+      <!-- Section : [sct-default] : Start -->
+      <section class="sct sct-default">
+        <div class="container">
+
+          <ul>
+            <li>Edit <small><b>src\img\favicon\original.png</b></small></li>
+            <li>Execute <small><b>yarn gulp fav</b></small></li>
+            <li>Let's start creating components from <strong><small><a href="ui.html">ui.html</a></small></strong></li>
+          </ul>
+
+          <button data-micromodal-trigger="modal-callback">Open Modal</button>
+
+          <br>
+          <br>
+
+          <style>
+            .slide-test-img {
+              width: 232.39px;
+              /* exact column with */
+              margin-right: 2px;
+              /* "spaceBetween" value */
+            }
+            .slide-test-img img {
+              filter: grayscale(0.9);
+            }
+
+            /* + sync media queries */
+          </style>
+
+          <div class="slider slider-dft my-4" data-slider>
+            <div class="slider-wrapper">
+              <!-- Swiper -->
+              <div class="swiper" data-swiper data-swiper-options='{
+                "loop": true,
+                "slidesPerView": 5,
+                "spaceBetween": 2
+              }'>
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/01.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/02.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/03.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/04.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/05.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/06.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/07.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/08.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                  <div class="swiper-slide slide-test-img">
+                    <div class="ratio-box">
+                      <img class="swiper-lazy img-cover" data-src="img/slider/09.jpg" src="svg/lazy.svg" />
+                    </div>
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Swiper Navigation -->
+              <div class="swiper-button-prev" data-slider-prev>Prev</div>
+              <div class="swiper-button-next" data-slider-next>Next</div>
+            </div>
+
+          </div>
+
+          <style>
+            .slide-test-text {
+              width: 380px;
+              /* exact column with */
+              margin-right: 15px;
+              /* "spaceBetween" value */
+              text-align: center;
+              background-color: rgb(241 241 241);
+              padding: 10px 0;
+            }
+
+            /* + sync media queries */
+          </style>
+
+          <div class="slider slider-dft my-4" data-slider>
+            <div class="slider-wrapper">
+              <!-- Swiper -->
+              <div class="swiper" data-swiper data-swiper-options='{
+                "loop": true,
+                "slidesPerView": 3,
+                "spaceBetween": 15
+              }'>
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide slide-test-text">
+                    <h5 class="mb-0">Gulp</h5>
+                  </div>
+                  <div class="swiper-slide slide-test-text">
+                    <h5 class="mb-0">Common</h5>
+                  </div>
+                  <div class="swiper-slide slide-test-text">
+                    <h5 class="mb-0">Template</h5>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      <!-- Section : [sct-default] : End -->
+
+    </main>
+    <!-- AppPage : End -->
+
+    <!-- AppFooter : Start -->
+    <footer class="app-footer">
+      <div class="container">
+        <small>Footer content...</small>
+      </div>
+    </footer>
+    <!-- AppFooter : End -->
+  </div>
+
+  <!-- AppDrawer : Start -->
+  <aside class="app-drawer" data-drawer="app-drawer" style="display:none">
+    <header class="app-drawer__header">
+      <div class="container-fluid">
+        <div class="row justify-content-end align-items-center">
+          <div class="col">
+            <strong class="lh-1"><small>Drawer Header...</small></strong>
+          </div>
+          <div class="col-auto">
+
+            <button class="hamburger hamburger--slider app-drawer__btn-menu" data-drawer-toggle="app-drawer" aria-label="Меню">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="app-drawer__content py-4">
+
+      <div class="container">
+        <small>Drawer content...</small>
+      </div>
+
+    </div>
+  </aside>
+  <!-- AppDrawer : End -->
+
+  <div data-micromodal id="modal-callback">
+    <h2 class="m-0">Modal Title</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis fugiat incidunt deleniti!</p>
+  </div>
+
+  <!-- build:js -->
+  <script src="./js/pre.js"></script>
+  <script src="./js/vendors.js"></script>
+  <script src="./js/app.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

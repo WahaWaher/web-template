@@ -1,0 +1,10 @@
+node_modules
+/build
+/src/js
+/src/css
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.ini

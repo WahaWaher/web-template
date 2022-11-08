@@ -1,0 +1,8 @@
+/**
+ * App Icon Font
+ * https://icomoon.io
+ */
+$icomoon-font-family: 'AppIconFont';
+$icomoon-font-path: '../fonts/#{$icomoon-font-family}';
+
+@import '../../modules/app-icon-font/style.scss';

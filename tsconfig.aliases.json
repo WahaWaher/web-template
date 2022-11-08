@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/ts/*"
+      ],
+      "@utils/*": [
+        "src/ts/utils/*"
+      ],
+      "@vendors/*": [
+        "src/ts/vendors/*"
+      ],
+      "@types/*": [
+        "src/ts/types/*"
+      ],
+      "~/*": [
+        "node_modules/*"
+      ]
+    },
+  },
+}

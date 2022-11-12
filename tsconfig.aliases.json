@@ -8,8 +8,8 @@
       "@utils/*": [
         "src/ts/utils/*"
       ],
-      "@vendors/*": [
-        "src/ts/vendors/*"
+      "@libs/*": [
+        "src/ts/libs/*"
       ],
       "@types/*": [
         "src/ts/types/*"

@@ -1,7 +1,7 @@
 const { series, parallel } = require('gulp');
 // Tasks
 const { cleanBuild, cleanCSS, cleanJS } = require('./tasks/clean');
-const { stylesApp, stylesVendors } = require('./tasks/styles');
+const { stylesApp, stylesLibs } = require('./tasks/styles');
 const { scripts } = require('./tasks/scripts');
 const { rootPagesHTML, rootPagesPHP } = require('./tasks/pages');
 const { copyIMG, genFavicons, genSprite, copySVG } = require('./tasks/images');
@@ -29,7 +29,7 @@ exports['dev'] = series(
   parallel(
     [
       stylesApp,
-      stylesVendors,
+      stylesLibs,
       config.useSprite && genSprite,
       config.useIconFont && copyIconFonts
     ].filter(Boolean)
@@ -46,7 +46,7 @@ exports['build'] = series(
   parallel(
     [
       stylesApp,
-      stylesVendors,
+      stylesLibs,
       copyFonts,
       copyIMG,
       copySVG,

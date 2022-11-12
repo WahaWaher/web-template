@@ -19,12 +19,12 @@ const rollupConfig = getFiles(jsSrc, '.ts')
 
     return {
       input: `${jsSrc}/${file}`,
-      external: name !== 'vendors' && ['wdrawer', 'micromodal', 'swiper'],
+      external: name !== 'libs' && ['wdrawer', 'micromodal', 'swiper'],
       output: {
         file: `${jsDist}/${name}${config[mode].js[name].min ? '.min' : ''}.js`,
         format: 'iife',
         sourcemap: isMode('dev'),
-        globals: name !== 'vendors' && {
+        globals: name !== 'libs' && {
           wdrawer: 'WDrawer',
           micromodal: 'MicroModal',
           swiper: 'Swiper',
@@ -48,18 +48,18 @@ const rollupConfig = getFiles(jsSrc, '.ts')
   })
 
   /**
-   * Vendors (separated)
+   * Libs (separated)
    */
   .concat(
-    config[mode].js.vendors.separate
-      ? getFiles(`${jsSrc}/vendors`, '.ts').map((file) => {
+    config[mode].js.libs.separate
+      ? getFiles(`${jsSrc}/libs`, '.ts').map((file) => {
           const { name } = path.parse(file);
 
           return {
-            input: `${jsSrc}/vendors/${file}`,
+            input: `${jsSrc}/libs/${file}`,
             output: {
-              file: `${jsDist}/vendors/${name}${
-                config[mode].js.vendors.min ? '.min' : ''
+              file: `${jsDist}/libs/${name}${
+                config[mode].js.libs.min ? '.min' : ''
               }.js`,
               format: 'iife',
               sourcemap: isMode('dev')
@@ -69,7 +69,7 @@ const rollupConfig = getFiles(jsSrc, '.ts')
               typescript({ tsconfig: `./tsconfig.${mode}.json` }),
               commonjs(),
               nodeResolve({ browser: true }),
-              config[mode].js.vendors.min && terser({
+              config[mode].js.libs.min && terser({
                 format: {
                   comments: false,
                 },

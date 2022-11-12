@@ -41,7 +41,7 @@ const config = {
         maps: true
       },
       // vendor styles
-      vendors: {
+      libs: {
         min: false,
         maps: false,
         separate: true
@@ -51,7 +51,7 @@ const config = {
       app: {
         min: false
       },
-      vendors: {
+      libs: {
         min: false,
         separate: false
       },
@@ -78,17 +78,17 @@ const config = {
         min: true,
         maps: false
       },
-      vendors: {
+      libs: {
         min: true,
         maps: false,
-        separate: false
+        separate: true
       }
     },
     js: {
       app: {
         min: true
       },
-      vendors: {
+      libs: {
         min: true,
         separate: true
       },
@@ -101,12 +101,12 @@ const config = {
 
 const htmlReplacements = {
   css: [
-    `css/vendors${config[mode].css.vendors.min ? '.min' : ''}.css`,
+    `css/libs${config[mode].css.libs.min ? '.min' : ''}.css`,
     `css/app${config[mode].css.app.min ? '.min' : ''}.css`
   ],
   js: [
     `js/pre${config[mode].js.pre.min ? '.min' : ''}.js`,
-    `js/vendors${config[mode].js.vendors.min ? '.min' : ''}.js`,
+    `js/libs${config[mode].js.libs.min ? '.min' : ''}.js`,
     `js/app${config[mode].js.app.min ? '.min' : ''}.js`
   ]
 };

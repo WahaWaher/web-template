@@ -1,0 +1,38 @@
+/**
+ * Component: ratio-box
+ */
+
+@use "../settings" as *;
+
+$ratios: (
+  "2-1": 50%,
+  "16-9": 56.3%,
+  "4-3": 75%,
+);
+
+.ratio-box {
+  position: relative;
+  > * {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  // ratio class-modificators
+  @each $name, $percent in $ratios {
+    &_#{$name} {
+      &:after {
+        padding-bottom: $percent;
+      }
+    }
+  }
+}

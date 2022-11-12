@@ -1,7 +1,7 @@
 const { watch, parallel } = require('gulp');
 // Tasks
-const { stylesApp, stylesVendors } = require('./styles');
-const { jsApp, jsPre, jsVendors, jsVendorsSep, scripts } = require('./scripts');
+const { stylesApp, stylesLibs } = require('./styles');
+const { jsApp, jsPre, jsLibs, jsLibsSep, scripts } = require('./scripts');
 const { server, reload } = require('./server');
 const { genSprite } = require('./images');
 const { copyIconFonts } = require('./other');
@@ -18,26 +18,26 @@ const watcher = () => {
   watch(
     [
       `${appSrc}/scss/**/*.scss`,
-      `!${appSrc}/scss/vendors/**/*`,
-      `!${appSrc}/scss/vendors.scss`
+      `!${appSrc}/scss/libs/**/*`,
+      `!${appSrc}/scss/libs.scss`
     ],
     stylesApp
   );
 
-  // VendorStyles
+  // Libstyles
   watch(
     [
-      `${appSrc}/scss/vendors/**/*`,
+      `${appSrc}/scss/libs/**/*`,
       `${appSrc}/scss/_settings.scss`,
-      `${appSrc}/scss/vendors.scss`
+      `${appSrc}/scss/libs.scss`
     ],
-    stylesVendors
+    stylesLibs
   );
 
   // IconFont
   watch(
     [`${appSrc}/modules/app-icon-font/**/*`],
-    parallel(copyIconFonts, stylesVendors)
+    parallel(copyIconFonts, stylesLibs)
   );
 
   // JavaScript

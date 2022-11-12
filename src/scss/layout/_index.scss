@@ -1,0 +1,44 @@
+/**
+ * Layout
+ */
+
+@use "../settings" as *;
+
+.app {
+  // ---
+  // Header
+  // ---
+  &-header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    background-color: $layout-bg;
+  }
+
+  // ---
+  // Page
+  // ---
+  &-page {
+  }
+
+  // ---
+  // Footer
+  // ---
+  &-footer {
+    background-color: $layout-bg;
+  }
+
+  // ---
+  // Drawer
+  // ---
+  &-drawer {
+    &__header {
+      display: flex;
+      align-items: center;
+      height: $header-height;
+      background-color: $layout-bg;
+    }
+    &__content {
+    }
+  }
+}

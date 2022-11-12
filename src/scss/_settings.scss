@@ -1,82 +1,152 @@
-// Fonts:
-$font-main: 'Open Sans', sans-serif;
-$font-icon: 'AppIconFont';
+// ---
+// Typography
+// ---
+$font-family-base: "Open Sans", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$font-weight-base: 400;
+$letter-spacing-base: normal; // 0.05em === 50(Photoshop)/1000
 
-$font-size-main: 16px;
-$font-weight-main: 400;
-$line-height-main: 1.5;
-$letter-spacing-main: normal; // 0.05em === 50(photoshop)/1000
-
-// Colors:
+// ---
+// Colors
+// ---
 $white: #fff;
 $black: #222;
+
 $grey: #656d78;
-$grey-extra-light: #f5f5f5;
-
 $accent: #4fc1e9;
+
 $primary: #a0d468;
+$success: #2ecc71;
+$info: #3498db;
+$warning: #e67e22;
+$danger: #e44c4c;
 
-$imageholder-bg: #f7f7f7;
+// Grey palette
+$grey-lightest: null;
+$grey-lighter: null;
+$grey-light: null;
+$grey-: null;
+$grey-dark: null;
+$grey-darker: null;
+$grey-darkest: null;
 
-// Sizes:
-$text-sizes: (
-  // tiny: 0.625rem,
-  // small: 0.75rem,
-  medium: 0.875rem,
-  base: 1rem,
-  large: 1.125rem,
-  // big: 1.25rem,
-  // huge: 1.375rem,
+// // Grey palette
+// $grey-100: null;
+// $grey-200: null;
+// $grey-300: null;
+// $grey-400: null;
+// $grey-500: $grey;
+// $grey-600: null;
+// $grey-700: null;
+// $grey-800: null;
+// $grey-900: null;
+
+// Main colors map
+$colors: (
+  "white": $white,
+  "black": $black,
+  "grey": $grey,
+  "accent": $accent,
+  "primary": $primary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
 );
 
-// Shadows:
-// $shadow-base: '';
+// ---
+// Icon Fonts
+// ---
+$icon-font-family: "AppIconFont";
 
-// Transitions
-$trs: .15s;
+// ---
+// Shadows
+// ---
+$box-shadow: null;
 
-// App Typography
-$app-font: $font-main;
-$app-font-size: $font-size-main;
-$app-line-height: $line-height-main;
-$app-font-weight: $font-weight-main;
-$app-letter-spacing: $letter-spacing-main;
+// ---
+// Animation
+// ---
+$trs: 0.15s;
 
-// Bootstrap grid/utils
+// ---
+// Grid
+// ---
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Breakpoints
+// Defaults:
+// xs:   0      — 0-575
+// sm:   576px  — 576-767
+// md:   768px  — 768-991
+// lg:   992px  — 992-1279
+// xl:   1280px — 1280-1439
+// xxl:  1440px — 1440-...
+// xxxl: 1920px
 $grid-breakpoints: (
-  xs: 0, // 0-575
-  sm: 576px, // 576-767
-  md: 768px, // 768-991
-  lg: 992px, // 992-1279
-  xl: 1280px, // 1280-1439
-  // xxl: 1440px, // 1440-...
-  // xxxl: 1920px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
 );
 
+// Container
+// Defaults:
+// sm:   540px
+// md:   720px
+// lg:   960px
+// xl:   1200px
+// xxl:  1380px
+// xxxl: 1720px
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1200px,
-  // xxl: 1380px,
-  // xxxl: 1720px
 );
 
-$grid-columns: 12;
-$grid-gutter-width: 30px; 
+// ---
+// Text sizes
+// ---
+// Text sizes for custom class utilities
+$text-sizes: (
+  // tiny: 0.625rem,
+  // small: 0.75rem,
+  medium: 0.875rem,
+  normal: 1rem,
+  large: 1.125rem,
+  // big: 1.25rem,
+  // huge: 1.375rem,
+);
 
+// ---
+// Spaces
+// ---
 $spacer: 1rem;
-$spacers: (0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3),
-  // 6: ($spacer * 4),
-  // 7: ($spacer * 5),
-  gap: calc($grid-gutter-width / 2 / $font-size-main) + rem
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  // 6: $spacer * 4,
+  // 7: $spacer * 5,
+  gap: calc($grid-gutter-width / 2 / $font-size-base) + rem,
 );
 
+// ---
+// Layout
+// ---
 $header-height: 45px;
-$backdrop-color: #444;
-$backdrop-opacity: .85;
+$layout-bg: #e9e9e9;
+
+// ---
+// Other
+// ---
+$placeholder-color: #f7f7f7; // Background color for image placeholders
+$backdrop-color: #444; // Modals & Drawers backdrop color
+$backdrop-opacity: 0.85;

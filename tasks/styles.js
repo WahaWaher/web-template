@@ -26,13 +26,13 @@ sass.compiler = require('sass');
 const stylesApp = () => {
   return src([
     `${appSrc}/scss/**/*.scss`,
-    `!${appSrc}/scss/vendors/**/*`,
-    `!${appSrc}/scss/vendors.scss`
+    `!${appSrc}/scss/libs/**/*`,
+    `!${appSrc}/scss/libs.scss`
   ])
+    .pipe(gulpif(config[mode].css.app.maps, sourcemaps.init()))
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
-    .pipe(gulpif(config[mode].css.app.maps, sourcemaps.init()))
     .pipe(
       sass({
         importer: sassTildeImporter,
@@ -42,7 +42,6 @@ const stylesApp = () => {
     )
     .pipe(cssimport({ includePaths: ['./node_modules/'] }))
     .pipe(postcss(postcssConfig('app')[mode].plugins))
-    .pipe(gulpif(config[mode].css.app.maps, sourcemaps.write()))
     .pipe(
       rename({
         // basename: 'app',
@@ -50,26 +49,27 @@ const stylesApp = () => {
         extname: '.css'
       })
     )
+    .pipe(gulpif(config[mode].css.app.maps, sourcemaps.write('./maps')))
     .pipe(dest(isMode('dev') ? `${appSrc}/css` : `${appBuild}/css`))
     .pipe(gulpif(isMode('dev'), stream()));
 };
 
 /**
- * CSS: Vendors
+ * CSS: Libs
  */
-const stylesVendors = () => {
+const stylesLibs = () => {
   return src(
     [
-      config[mode].css.vendors.separate
-        ? `${appSrc}/scss/vendors/**/*.scss`
+      config[mode].css.libs.separate
+        ? `${appSrc}/scss/libs/**/*.scss`
         : false,
-      `${appSrc}/scss/vendors.scss`
+      `${appSrc}/scss/libs.scss`
     ].filter(Boolean)
   )
+    .pipe(gulpif(config[mode].css.libs.maps, sourcemaps.init()))
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
-    .pipe(gulpif(config[mode].css.vendors.maps, sourcemaps.init()))
     .pipe(
       sass({
         importer: sassTildeImporter,
@@ -78,23 +78,23 @@ const stylesVendors = () => {
       }).on('error', sass.logError)
     )
     .pipe(cssimport({ includePaths: ['./node_modules/'] }))
-    .pipe(postcss(postcssConfig('vendors')[mode].plugins))
-    .pipe(gulpif(config[mode].css.vendors.maps, sourcemaps.write()))
+    .pipe(postcss(postcssConfig('libs')[mode].plugins))
     .pipe(
       rename((path) => {
-        if (path.basename !== 'vendors') {
-          path.dirname += '/vendors';
+        if (path.basename !== 'libs') {
+          path.dirname += '/libs';
         }
 
-        path.basename += config[mode].css.vendors.min ? '.min' : '';
+        path.basename += config[mode].css.libs.min ? '.min' : '';
         path.extname = '.css';
       })
     )
     .pipe(dest(isMode('dev') ? `${appSrc}/css` : `${appBuild}/css`))
+    .pipe(gulpif(config[mode].css.libs.maps, sourcemaps.write('./maps')))
     .pipe(gulpif(isMode('dev'), stream()));
 };
 
 module.exports = {
   stylesApp,
-  stylesVendors
+  stylesLibs
 };

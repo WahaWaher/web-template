@@ -3516,13 +3516,13 @@ gulp-sourcemaps@^3.0.0:
     strip-bom-string "^1.0.0"
     through2 "^2.0.0"
 
-gulp-svg-sprite@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-svg-sprite/-/gulp-svg-sprite-2.0.0.tgz#339c2a22c482a981085ac9d612489c89321a73e2"
-  integrity sha512-uxeloq9+36tPPGc8L1ybA+3euu0mw1IDWDCBRJdFx5TWYTInLDcNGhBczURm83PSwYUefU5WuX8dkY8iS2jotg==
+gulp-svg-sprite@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-svg-sprite/-/gulp-svg-sprite-2.0.1.tgz#b43400b958586f528c72bbed9c75d8de73cf6dbb"
+  integrity sha512-hK+ipciM9YU9G3lAeBMqZJaDsiq7NMXOkirR7DkU/YhhzE+JEnhp8DzzYC58Dt09KpAmwoK49SIyyk/1UvkJLg==
   dependencies:
     plugin-error "^1.0.1"
-    svg-sprite "^2.0.0"
+    svg-sprite "^2.0.2"
 
 gulp-to-ico@^1.0.0:
   version "1.0.0"
@@ -6329,10 +6329,10 @@ postcss@^7.0.16:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.4.18:
-  version "8.4.18"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.18.tgz#6d50046ea7d3d66a85e0e782074e7203bc7fbca2"
-  integrity sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==
+postcss@^8.4.19:
+  version "8.4.19"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.19.tgz#61178e2add236b17351897c8bcc0b4c8ecab56fc"
+  integrity sha512-h+pbPsyhlYj6N2ozBmHhHrs9DzGmbaarbLvWipMRO7RLS+v4onj26MPFXA5OBYFxyqYhUJK456SwDcY9H2/zsA==
   dependencies:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
@@ -6815,10 +6815,10 @@ rollup-plugin-ts-paths@^1.0.5:
     strip-bom "^4.0.0"
     strip-json-comments "^3.0.1"
 
-rollup@^3.2.5:
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.2.5.tgz#9452168ac083218c8212bf53d2448bdc6b8b0de7"
-  integrity sha512-/Ha7HhVVofduy+RKWOQJrxe4Qb3xyZo+chcpYiD8SoQa4AG7llhupUtyfKSSrdBM2mWJjhM8wZwmbY23NmlIYw==
+rollup@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.3.0.tgz#ae8dc84808a9c75d775d8b2ed8db1adada31a581"
+  integrity sha512-wqOV/vUJCYEbWsXvwCkgGWvgaEnsbn4jxBQWKpN816CqsmCimDmCNJI83c6if7QVD4v/zlyRzxN7U2yDT5rfoA==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -6868,10 +6868,10 @@ safe-stable-stringify@^2.3.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.56.0:
-  version "1.56.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.0.tgz#134032075a3223c8d49cb5c35e091e5ba1de8e0a"
-  integrity sha512-WFJ9XrpkcnqZcYuLRJh5qiV6ibQOR4AezleeEjTjMsCocYW59dEG19U3fwTTXxzi2Ed3yjPBp727hbbj53pHFw==
+sass@^1.56.1:
+  version "1.56.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.1.tgz#94d3910cd468fd075fa87f5bb17437a0b617d8a7"
+  integrity sha512-VpEyKpyBPCxE7qGDtOcdJ6fFbcpOM+Emu7uZLxVrkX8KVU/Dp5UF7WLvzqRuUhB6mqqQt1xffLoG+AndxTZrCQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -7553,10 +7553,10 @@ sver-compat@^1.5.0:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
 
-svg-sprite@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-2.0.1.tgz#8f0c847b93f37c40c38769e4ec986c50063f5c04"
-  integrity sha512-H39axwQviFWEOUTj+P7OMQ9YpimJQ3F4wwZNMFTTQskGWWbGmD0NMiyrtaeMz75K3yenRjZCkXi5D2kYpW5lDw==
+svg-sprite@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-2.0.2.tgz#3d47431206a4ad0a41b6f6b1d816119f021ea5de"
+  integrity sha512-vLFP/t4YCu62mvOzUt6g9bqpKrPjYsLuzegw5WsIsv3DkulAI/fRC+k7Atk//rIkUDbvKo572nJ6o4YT+FbKig==
   dependencies:
     "@resvg/resvg-js" "^2.1.0"
     "@xmldom/xmldom" "^0.8.3"

@@ -1,0 +1,45 @@
+/**
+ * Libs Extesions
+ * Styling changes for 3rd party libraries
+ */
+
+@use "../settings" as *;
+
+/**
+ * Library: Lazysizes
+ * Sets custom animation
+ */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity $trs * 2;
+}
+
+/**
+ * Library: wDrawer
+ * Sets custom animation and colors
+ */
+.wdrawer {
+  transition: all $trs * 1.5;
+  &-page,
+  &-backdrop {
+    transition: all $trs * 1.5;
+  }
+  &-backdrop {
+    background-color: $backdrop-color;
+    &.is-active {
+      opacity: $backdrop-opacity;
+    }
+  }
+}
+
+/**
+ * Library: Hamburger
+ * Some fixes
+ */
+.hamburger {
+  display: flex;
+}

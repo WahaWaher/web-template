@@ -1,17 +1,14 @@
-@import 'settings';
-@import './utils/functions';
+// Core
+@use "core/fonts";
+@use "core/base";
 
-// Bootstrap Utils
-@import '~bootstrap/scss/_functions';
-@import '~bootstrap/scss/_variables';
-@import '~bootstrap/scss/_mixins';
+// Libs Extensions
+@use "libs-extensions/common";
 
-// Base
-@import 'main/fonts';
-@import 'main/base';
+// Layout, Components, Mixes
+@use "mixes";
+@use "layout";
+@use "components";
 
-// Main
-@import 'main/vendors-overrides';
-@import 'main/common';
-@import 'main/sections';
-@import 'main/mixes';
+// Common styles
+@use "common" as commonStyles;

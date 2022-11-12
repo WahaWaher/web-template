@@ -1,8 +1,13 @@
-@import '../settings';
-
-/**
- * Default style
+/*!
+ * Micromodal
+ * @description Tiny, dependency-free javascript library for creating accessible modal dialogs
+ * @author Indrashish Ghosh
+ * @site https://micromodal.vercel.app/
+ * @link https://github.com/Ghosh/micromodal
  */
+
+@use "../settings" as *;
+
 [data-micromodal] {
   display: none;
   &.is-open {
@@ -50,27 +55,29 @@
       }
       &:hover {
         color: $white;
-        background-color: rgb(228, 76, 76);
+        background-color: $danger;
       }
     }
   }
-  /**
-   * Animation
-   */
+  // Animation
   &[aria-hidden="false"] {
-    .modal__overlay {
-      animation: mFadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-    }
-    .modal__container {
-      animation: mSlideIn .3s cubic-bezier(0, 0, .2, 1);
+    .modal {
+      &__overlay {
+        animation: mFadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+      }
+      &__container {
+        animation: mSlideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+      }
     }
   }
   &[aria-hidden="true"] {
-    .modal__overlay {
-      animation: mFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-    }
-    .modal__container {
-      animation: mSlideOut .5s cubic-bezier(0, 0, .2, 1);
+    .modal {
+      &__overlay {
+        animation: mFadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+      }
+      &__container {
+        animation: mSlideOut 0.5s cubic-bezier(0, 0, 0.2, 1);
+      }
     }
   }
 }

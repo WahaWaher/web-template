@@ -1,0 +1,110 @@
+@use "../settings" as *;
+
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+
+// $utilities: ();
+
+// @import "bootstrap/scss/utilities/api";
+
+/**
+ * Mix: img
+ */
+.img {
+  &-cover {
+    object-fit: cover !important;
+    font-family: "object-fit: cover;" !important;
+  }
+  // &-contain {
+  //   object-fit: contain;
+  //   font-family: "object-fit: contain;";
+  // }
+  // &-full {
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+// /**
+//  * Mix: list
+//  */
+// .list {
+//   &-unstyled {
+//     list-style-type: none;
+//     padding: 0;
+//     margin: 0;
+//   }
+//   &-inline {
+//   }
+// }
+
+// /**
+//  * Mix: mode
+//  */
+// .mode {
+//   &-silent {
+//     opacity: 0;
+//     pointer-events: none;
+//     user-select: none;
+//   }
+// }
+
+// /**
+//  * Mix: fx
+//  */
+// .fx-hover {
+//   // zoomIn
+//   &-zoomIn {
+//     cursor: pointer;
+//     overflow: hidden;
+//     > * {
+//       transition: all $trs * 2;
+//     }
+//     &:hover,
+//     &:focus {
+//       > * {
+//         opacity: 0.75;
+//         transform: scale(1.065);
+//       }
+//     }
+//     &:active {
+//       > * {
+//         transform: scale(1.025);
+//       }
+//     }
+//   }
+
+//   // moveUp
+//   &-moveUp {
+//     transition: all $trs * 2;
+//     &:hover,
+//     &:focus {
+//       transform: translateY(-5px);
+//     }
+//     &:active {
+//       transform: translateY(2px);
+//     }
+//   }
+// }
+
+// /**
+//  * Mix: text-trunc
+//  */
+// .text-trunc {
+//   $vars: 2;
+
+//   display: -webkit-box;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: 1;
+//   @each $x in $vars {
+//     &_#{$x} {
+//       -webkit-line-clamp: $x;
+//     }
+//   }
+// }

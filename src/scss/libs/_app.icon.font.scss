@@ -4,5 +4,6 @@
  */
 $icomoon-font-family: 'AppIconFont';
 $icomoon-font-path: '../fonts/#{$icomoon-font-family}';
+$icomoon-font-path: '../fonts' !default;
 
-@import '../../modules/app-icon-font/style.scss';
+@import '../../modules/app-icon-font/style';

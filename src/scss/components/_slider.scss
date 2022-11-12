@@ -1,0 +1,96 @@
+/**
+ * Component: slider
+ */
+
+@use "../settings" as *;
+
+.slider {
+  &-wrapper {
+    position: relative;
+  }
+
+  // ---
+  // Default slider
+  // ---
+  &-dft {
+    .swiper {
+      &-initialized {
+      }
+      &-wrapper {
+      }
+      &-slide {
+      }
+      // Navigation
+      &-button-prev,
+      &-button-next {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        font-size: 0.75rem;
+        border-radius: 50%;
+        border: 1px solid $white;
+        color: $black;
+        line-height: 1;
+        background-color: #dedede;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        user-select: none;
+        transition: all $trs;
+        &:hover,
+        &:focus {
+        }
+        &:active {
+        }
+        &.swiper-button-disabled {
+          pointer-events: none;
+        }
+      }
+      &-button {
+        &-prev {
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+        &-next {
+          right: 0;
+          transform: translate(50%, -50%);
+        }
+      }
+      // Preloader
+      &-lazy-preloader {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $placeholder-color;
+        &::before {
+          content: "";
+          display: flex;
+          width: 20%;
+          height: 20%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("../svg/preloader.svg") no-repeat center;
+          transition: all $trs * 2;
+        }
+      }
+      // Lazy animation
+      &-lazy {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        &-loaded {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}

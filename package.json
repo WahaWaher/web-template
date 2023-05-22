@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@brightleaf/animate.scss": "^3.7.1",
+    "animated-scroll-to": "^2.3.0",
     "bootstrap": "5.2.3",
     "deepmerge": "^4.3.1",
     "hamburgers": "1.2.1",

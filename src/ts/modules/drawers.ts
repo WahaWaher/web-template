@@ -1,11 +1,11 @@
 import WDrawer from 'wdrawer';
 
-export const initDrawers = (): void => {
-  const $drawers = document.querySelectorAll<HTMLElement>('[data-drawer]');
+export const initDrawers = (): { drawers: NodeListOf<Element> } => {
+  const drawers = document.querySelectorAll<HTMLElement>('[data-drawer]');
   const activeClass: string = 'is-active';
 
   // Init plugin on each drawer-dom-element
-  $drawers.forEach((element) => {
+  drawers.forEach((element) => {
     element.wDrawer = new WDrawer(element, {
       width: 300,
       page: '.app'
@@ -17,7 +17,7 @@ export const initDrawers = (): void => {
   // Bind switch buttons
   $toggleBtns.forEach((button) => {
     const drawerID = button.getAttribute('data-drawer-toggle');
-    const [targetDrawerElement] = Array.from($drawers).filter(
+    const [targetDrawerElement] = Array.from(drawers).filter(
       (element) => element.getAttribute('data-drawer') === drawerID
     );
     const { wDrawer: targetDrawerInst } = targetDrawerElement;
@@ -34,4 +34,6 @@ export const initDrawers = (): void => {
 
     button.addEventListener('click', () => targetDrawerInst.switch());
   });
+
+  return { drawers };
 };

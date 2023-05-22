@@ -1,15 +1,15 @@
 import WDrawer from 'wdrawer';
 
 export const initDrawers = (): void => {
-  const $drawers = document.querySelectorAll('[data-drawer]');
-  const activeClass = 'is-active';
+  const $drawers = document.querySelectorAll<HTMLElement>('[data-drawer]');
+  const activeClass: string = 'is-active';
 
   // Init plugin on each drawer-dom-element
   $drawers.forEach((element) => {
-    element.wDrawer = new WDrawer(element as HTMLElement, {
+    element.wDrawer = new WDrawer(element, {
       width: 300,
       page: '.app'
-    }); 
+    });
   });
 
   const $toggleBtns = document.querySelectorAll('[data-drawer-toggle]');
@@ -24,13 +24,13 @@ export const initDrawers = (): void => {
 
     if (!targetDrawerInst) return;
 
-    targetDrawerElement.addEventListener('wdrawer.open', () => {
-      button.classList.add(activeClass);
-    });
+    targetDrawerElement.addEventListener('wdrawer.open', () =>
+      button.classList.add(activeClass)
+    );
 
-    targetDrawerElement.addEventListener('wdrawer.close', () => {
-      button.classList.remove(activeClass);
-    });
+    targetDrawerElement.addEventListener('wdrawer.close', () =>
+      button.classList.remove(activeClass)
+    );
 
     button.addEventListener('click', () => targetDrawerInst.switch());
   });

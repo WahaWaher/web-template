@@ -18,14 +18,14 @@ const initSliders = (): void => {
       // Default slider options
       const defaultOptions: SwiperOptions = {
         modules: window.SwiperModules,
-        loop: false, // must be 2 x "slidesPerView"
+        loop: false, // if true, must be 2 x "slidesPerView"
         slidesPerView: 1,
         spaceBetween: 15,
-        watchSlidesProgress: true, // If you use slidesPerView: 'auto' or slidesPerView > 1
+        watchSlidesProgress: true, // If true. you use slidesPerView: 'auto' or slidesPerView > 1
         effect: 'fade',
-        // fadeEffect: {
-        //   crossFade: true
-        // },
+        fadeEffect: {
+          crossFade: true
+        },
         grabCursor: true,
         navigation: { prevEl, nextEl }
         // breakpoints: {

@@ -1,9 +1,8 @@
+@use "../settings" as *;
+
 /**
  * Component: slider
  */
-
-@use "../settings" as *;
-
 .slider {
   &-wrapper {
     position: relative;
@@ -61,35 +60,7 @@
       }
       // Preloader
       &-lazy-preloader {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $placeholder-color;
-        &::before {
-          content: "";
-          display: flex;
-          width: 20%;
-          height: 20%;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: url("../svg/preloader.svg") no-repeat center;
-          transition: all $trs * 2;
-        }
-      }
-      // Lazy animation
-      &-lazy {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        &-loaded {
-          opacity: 1 !important;
-        }
+        border-color: $accent transparent;
       }
     }
   }

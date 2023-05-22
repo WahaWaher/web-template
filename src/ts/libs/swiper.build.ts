@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Lazy } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 
 window.Swiper = Swiper;
-window.SwiperModules = [Navigation, Lazy];
+window.SwiperModules = [Navigation];

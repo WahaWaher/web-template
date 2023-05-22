@@ -12,7 +12,6 @@ module.exports = (type) => ({
   dev: {
     plugins: [
       inlineSvg,
-      sortMediaQueries({ sort: 'desctop-first' }),
       autoprefixer({ overrideBrowserslist: ['> 0.2%', 'not ie <= 11'] }),
       config.dev.css[type].min &&
         cssnano({

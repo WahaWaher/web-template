@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../settings" as *;
+@import "../utils/breakpoints";
+
+/**
+ * Component: menu-mobile
+ */
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  > li {
+    display: flex;
+    width: 100%;
+    > a {
+      width: 100%;
+      display: flex;
+      // justify-content: flex-end; // Align right
+      text-decoration: none;
+      padding: 0.25em map.get($spacers, "gap");
+    }
+    &:focus,
+    &:hover {
+      color: $accent;
+      background-color: rgba($accent, 4%);
+    }
+  }
+}

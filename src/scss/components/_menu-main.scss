@@ -1,0 +1,28 @@
+@use "../settings" as *;
+@import "../utils/breakpoints";
+
+/**
+ * Component: menu-main
+ */
+$gutters: 10px;
+
+.menu-main {
+  display: inline-flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 - $gutters;
+  > li {
+    display: inline-flex;
+    margin: 0 $gutters;
+    position: relative;
+    > a {
+      display: inline-flex;
+      text-decoration: none;
+    }
+    &:hover {
+      > a {
+        color: $accent;
+      }
+    }
+  }
+}

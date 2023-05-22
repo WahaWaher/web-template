@@ -1,0 +1,63 @@
+@use "../settings" as *;
+@import "../utils/breakpoints";
+
+/**
+ * Component: btn
+ */
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  min-height: 40px;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-base;
+  line-height: 1.15;
+  font-weight: 700;
+  text-decoration: none;
+  color: $white;
+  border: 2px solid $black;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  padding: 0.5em 1.875em;
+  background-color: $black;
+  transition: all $trs;
+  &:hover {
+    border-color: lighten($black, 10%);
+    background-color: lighten($black, 10%);
+  }
+  &:active {
+    border-color: lighten($black, 5%);
+    background-color: lighten($black, 5%);
+  }
+  &:focus {
+    border-color: lighten($black, 15%);
+    box-shadow: 0 0 0 0.2em rgba($black, 0.1);
+  }
+  // Colors
+  &_accent {
+    color: $white;
+    border-color: $accent;
+    background-color: $accent;
+    &:hover {
+      border-color: lighten($accent, 5%);
+      background-color: lighten($accent, 5%);
+    }
+    &:active {
+      border-color: lighten($accent, 0%);
+      background-color: lighten($accent, 0%);
+    }
+    &:focus {
+      border-color: lighten($accent, 10%);
+      box-shadow: 0 0 0 0.2em rgba($accent, 0.15);
+    }
+  }
+  // Sizes
+  &_lg {}
+  // Types
+  // Transformations
+  &_wide {
+    display: flex;
+    width: 100%;
+  }
+}

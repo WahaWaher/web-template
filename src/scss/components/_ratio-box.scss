@@ -1,9 +1,8 @@
+@use "../settings" as *;
+
 /**
  * Component: ratio-box
  */
-
-@use "../settings" as *;
-
 $ratios: (
   "2-1": 50%,
   "16-9": 56.3%,

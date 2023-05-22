@@ -1,28 +1,39 @@
+@use "sass:map";
+@use "../utils/breakpoints" as *;
+
 /**
  * Component: title
  */
-
-@use "../settings" as *;
-
-$use-the-content: false; // generate titles for ".the-content" block or not
+$sizes: (
+  // 1: (
+  //   base: 38px,
+  //   md: 34px,
+  //   sm: 30px
+  // ),
+);
 
 // Common styles for all titles
 %title {
   font-weight: 700;
-  margin: 0 0 0.5em 0;
+  margin: 0;
 }
 
-@for $i from 1 through 6 {
-  $selector: null;
-
-  @if $use-the-content {
-    $selector: ".title-#{$i}, .the-content h#{$i}";
-  } @else {
-    $selector: ".title-#{$i}";
-  }
-
-  #{$selector} {
-    @extend %title;
-    font-size: #{$i} + px;
+.title {
+  @each $name, $breakpoints in $sizes {
+    &-#{$name} {
+      font-size: map.get($breakpoints, "base");
+      @extend %title;
+      @each $breakpoint, $fontSize in $breakpoints {
+        @if $breakpoint != "base" {
+          @if map.has-key($grid-breakpoints, $breakpoint) {
+            @include media-breakpoint-down($breakpoint) {
+              font-size: $fontSize;
+            }
+          } @else {
+            @error 'Breakpoint «#{$breakpoint}» does not exist in $grid-breakpoints map';
+          }
+        }
+      }
+    }
   }
 }

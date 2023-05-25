@@ -13,8 +13,6 @@
   // ---
   &-dft {
     .swiper {
-      &-initialized {
-      }
       &-wrapper {
       }
       &-slide {
@@ -61,6 +59,12 @@
       // Preloader
       &-lazy-preloader {
         border-color: $accent transparent;
+      }
+      // Preloader Off when slider not initialized
+      &:not(.swiper-initialized) {
+        .swiper-lazy-preloader {
+          display: none;
+        }
       }
     }
   }

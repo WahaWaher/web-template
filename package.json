@@ -1,6 +1,6 @@
 {
   "name": "web-template",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Web Template 2023",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev gulp dev",
@@ -55,11 +55,8 @@
   },
   "dependencies": {
     "@brightleaf/animate.scss": "^3.7.1",
-    "animated-scroll-to": "^2.3.0",
     "bootstrap": "5.2.3",
-    "deepmerge": "^4.3.1",
     "hamburgers": "1.2.1",
-    "isobject": "^4.0.0",
     "lazysizes": "^5.3.2",
     "micromodal": "^0.4.10",
     "normalize.css": "^8.0.1",

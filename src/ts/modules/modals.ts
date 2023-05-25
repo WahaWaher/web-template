@@ -1,7 +1,7 @@
 import MicroModal from 'micromodal';
 
 const initModals = (): void => {
-  // Change markup fo default modals
+  // Changes markup for default modals
   document.querySelectorAll('[data-micromodal]').forEach((modal) => {
     modal.classList.add('modal', 'modal__default');
     modal.innerHTML = `

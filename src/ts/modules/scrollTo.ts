@@ -1,44 +1,42 @@
-import animateScrollTo, { IUserOptions } from 'animated-scroll-to';
+import { scrollTo } from '@/utils/scrollTo';
 
-const headerHeight = 0; // Sticky header height
-
-const scrollOptions: IUserOptions = {
-  easing: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t),
-  minDuration: 500,
-  maxDuration: 750
-};
+type TargetElement = HTMLElement;
 
 type ScrollToArgs = {
   drawers?: NodeListOf<Element>;
 };
 
 const initScrollTo = ({ drawers }: ScrollToArgs): void => {
-  document.querySelectorAll<HTMLElement | SVGAElement>('[data-scroll-to]').forEach((element) => {
-    const targetID: Nullable<string> = element.getAttribute('href');
+  const offset: number = 0; // For example, sticky header height
 
-    if (!targetID) return;
+  document
+    .querySelectorAll<HTMLAnchorElement>('a[data-scroll-to]')
+    .forEach((anchor) => {
+      const targetID: Nullable<string> = anchor.getAttribute('href');
 
-    const target: Nullable<HTMLElement> = document.querySelector(targetID);
+      if (!targetID) return;
 
-    if (!target) return;
-    
-    // Scroll
-    element.addEventListener('click', () =>
-      animateScrollTo(
-        target.offsetTop,
-        scrollOptions
-      )
-    );
-  });
+      const target: Nullable<TargetElement> = document.querySelector(targetID);
+
+      if (!target) return;
+
+      // Scroll to target
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollTo({ top: target.offsetTop - offset });
+      });
+    });
 
   // Close drawer after scroll
-  document.querySelectorAll<HTMLElement>('#drawer-main-menu a').forEach((element) => {
-    if (drawers) {
-      element.addEventListener('click', () =>
-        drawers.forEach((drawers) => drawers.wDrawer?.close())
-      );
-    }
-  });
+  document
+    .querySelectorAll<HTMLElement>('#drawer-main-menu a')
+    .forEach((element) => {
+      if (drawers) {
+        element.addEventListener('click', () =>
+          drawers.forEach((drawers) => drawers.wDrawer?.close())
+        );
+      }
+    });
 };
 
 export { initScrollTo };

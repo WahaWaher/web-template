@@ -1,6 +1,7 @@
 import Swiper, { SwiperOptions } from 'swiper';
 import deepmerge from 'deepmerge';
-import { dataAttrToObject } from '@/utils/dataAttrToObject';
+import { parseDataAttr } from '@/utils/parseDataAttr';
+import { deepMerge } from '@/utils/deepMerge';
 
 const initSliders = (): void => {
   document
@@ -41,15 +42,12 @@ const initSliders = (): void => {
         // },
       };
 
-      const attrOptions = dataAttrToObject(
+      const attrOptions = parseDataAttr(
         swiper.getAttribute('data-swiper-options')
       );
 
       // Init slider
-      new Swiper(
-        swiper,
-        deepmerge(defaultOptions, attrOptions, { clone: false })
-      );
+      new Swiper(swiper, deepMerge(defaultOptions, attrOptions));
     });
 };
 

@@ -1,10 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "target": "ES5",
-    "lib": [
-      "ES2015",
-      "DOM"
-    ],
-  }
+  // "compilerOptions": {
+  //   "target": "ES5", // ES5
+  //   "lib": [
+  //     "ES2015", // ES2015
+  //     "DOM"
+  //   ],
+  // }
 }

@@ -9,6 +9,11 @@ import { SwiperModule } from 'swiper/types/shared';
 
 declare global {
   type Nullable<T> = T | null;
+  type NonUndefined<T> = T extends undefined ? never : T;
+  type ExtractStrict<U, T extends U> = Extract<U, T>;
+  type PartialRecord<K extends keyof any, T> = { [P in K]?: T };
+  type UnionFromTuple<T> = T[any];
+  type EmptyObject = { [key in any]: never };
 
   interface Window {
     WDrawer?: typeof WDrawer;
